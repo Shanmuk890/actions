@@ -1,11 +1,10 @@
-name: github workflow
+name: GitHub Workflow
 
 on:
   push:
-  branches:
-    - main:
+    branches:
+      - main
   workflow_dispatch:
-
 
 jobs: 
   hello:
@@ -15,11 +14,10 @@ jobs:
       - name: hello world
         run: echo "hello world"
         shell: bash 
+
   goodbye:
     runs-on: ubuntu-latest
+    needs: hello
     steps:
       - name: good-bye
         run: echo "good bye world"
-
-
-
